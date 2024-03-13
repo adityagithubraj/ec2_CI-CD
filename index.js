@@ -19,6 +19,11 @@ const itemSchema = new mongoose.Schema({
 // Model
 const Item = mongoose.model('Item', itemSchema);
 
+app.get('/home', async (req, res) => {
+   
+    res.status(201).send("CI/CD WORKING....!");
+});
+
 // CREATE: Add a new item
 app.post('/items', async (req, res) => {
     let item = new Item({ name: req.body.name });
